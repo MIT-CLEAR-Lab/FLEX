@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Masked IRL: LLM-Guided Reward Disambiguation from Demonstrations and Language">
+        content="Flexible Language-Guided Representation Editing for Adaptive Robot Behavior">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Masked IRL: LLM-Guided Reward Disambiguation from Demonstrations and Language</title>
+  <title>Flexible Language-Guided Representation Editing for Adaptive Robot Behavior</title>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js)
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W77JBH4NHE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +22,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T3WRXWGZ');</script>
+    })(window,document,'script','dataLayer','GTM-T3WRXWGZ');</script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -338,28 +338,30 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-2 publication-title">
-            Masked IRL: LLM-Guided Reward Disambiguation<br> from Demonstrations and Language
+            Flexible Language-Guided Representation Editing<br>for Adaptive Robot Behavior
           </h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a target="_blank" href="https://minyoung1005.github.io/">Minyoung Hwang</a><sup>1</sup>,</span>
-            <span class="author-block"><a target="_blank" href="">Alexandra Forsey-Smerek</a><sup>1</sup>,</span>
+            <span class="author-block"><a target="_blank" href="https://audreyelee.github.io/">Audrey Lee</a><sup>1</sup>,</span>
             <span class="author-block"><a target="_blank" href="https://ndennler.github.io/">Nathaniel Dennler</a><sup>1</sup>,</span>
+            <span class="author-block"><a target="_blank" href="https://ilia10000.github.io/">Ilia Sucholutsky</a><sup>2</sup>,</span>
             <span class="author-block"><a target="_blank" href="https://www.mit.edu/~abobu/">Andreea Bobu</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>MIT CSAIL</span>
+            <span class="author-block"><sup>2</sup>New York University</span>
           </div>
 
-          <!-- <br> -->
-
-          <span class="link-block"><a target="_blank" href="https://arxiv.org/html/2511.14565v1" class="external-link
+          <!-- Links -->
+          <span class="link-block"><a target="_blank" href="https://arxiv.org/html/TBD" class="external-link
           button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file"></i></span><span>ArXiv</span></a></span>
 
-          <!-- Code Link. -->
-          <span class="link-block"><a target="_blank" href="https://github.com/MIT-CLEAR-Lab/Masked-IRL" class="external-link
+          <span class="link-block"><a target="_blank" href="https://github.com/MIT-CLEAR-Lab/FLEX" class="external-link
           button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+
+          <span class="link-block"><a target="_blank" href="https://www.youtube.com/TBD" class="external-link
+          button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span></a></span>
 
           <!-- <span class="link-block"><a target="_blank" href="" class="external-link
           button is-normal is-rounded is-light"><span class="icon"><i class="fab fa-github"></i></span><span>Code/Dataset Coming Soon</span></a></span> -->
@@ -375,7 +377,7 @@
 <!--          </a>-->
 <!--        </span>-->
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ICRA 2026</span>
+            <span class="author-block">CoRL 2026</span>
           </div>
           <br><br>
         </div>
@@ -391,14 +393,12 @@
       <div class="container">
         <div class="columns is-vcentered is-centered">
           <br>
-          <video id="teaser" autoplay muted loop width="800" height="100%">
-            <source src="media/masked_irl_teaser.mp4" type="video/mp4">
-          </video>
+          <img src="media/flex_overview.png">
         </div>
         <h2 class="subtitle has-text-centered">
           <span>
-            How can robots learn reward functions that capture true human preferences when
-            <font color="#9900FF">demonstrations and instructions are ambiguous?</font>
+            TBD
+            <font color="#9900FF">TBD</font>
           </span>
         </h2>
       </div>
@@ -415,9 +415,13 @@
         <div class="content has-text-justified">
           <br/>
           <p>
-            Robots can adapt to user preferences by learning reward functions from demonstrations, but with limited data, reward models often overfit to spurious correlations and fail to generalize. 
-This happens because demonstrations show robots how to do a task but not what matters for that task, causing the model to focus on irrelevant state details.
-Natural language can more directly specify what the robot should focus on, and, in principle, disambiguate between many reward functions consistent with the demonstrations. However, existing language-conditioned reward learning methods typically treat instructions as simple conditioning signals, without fully exploiting their potential to resolve ambiguity. Moreover, real instructions are often ambiguous themselves, so naive conditioning is unreliable. Our key insight is that these two input types carry complementary information: demonstrations show <emph>how</emph> to act, while language specifies <emph>what</emph> is important. We propose <strong>Masked Inverse Reinforcement Learning (Masked IRL)</strong>, a framework that uses large language models (LLMs) to combine the strengths of both input types. Masked IRL infers state-relevance masks from language instructions and enforces invariance to irrelevant state components. When instructions are ambiguous, it uses LLM reasoning to clarify them in the context of the demonstrations. In simulation and on a real robot, Masked IRL outperforms prior language-conditioned IRL methods by up to 15% while using up to 4.7 times less data, demonstrating improved sample-efficiency, generalization, and robustness to ambiguous language.
+          Trajectory demonstrations show robots how to behave but not why, leaving them to guess which <em>features</em>> of the task actually matter. Incorrect guesses produce misaligned internal representations and lead to incorrect robot behaviors. 
+          Because task features are often semantically defined, we argue that natural language is better suited for specifying features rather than relying on demonstrations. Although existing representation editing methods have proposed using language 
+          to specify new features, only allowing additive edits produces feature sets that are often over-specified or too narrowly scoped, especially in sequential editing tasks. We propose the <strong>Feature Editing Pipeline (FLEX)</strong>, which 
+          uses language models to iteratively refine a robot's internal representation of task features from natural language corrections via three complementary operations: <strong>Add</strong> missing features, <strong>Generalize</strong> existing 
+          specific features, and <strong>Mask</strong> irrelevant features. We evaluate <strong>FLEX</strong> on 2D navigation scenarios, 7DoF Franka tabletop manipulation tasks, and a real-world study using naturalistic human language corrections and real-robot demonstrations. 
+          Comparisons against single-operation and unscaffolded baselines show that all three operations are necessary in interactive scenarios, and that <strong>FLEX</strong> achieves consistently higher normalized reward compared to other feature editing approaches while 
+          maintaining compact, transferable representations.
           </p>
         </div>
       </div>
@@ -460,7 +464,7 @@ Natural language can more directly specify what the robot should focus on, and, 
 
         <!-- Full-width system architecture figure -->
         <div class="centered-container">
-          <img src="media/system_overview.png"
+          <img src="media/teaser.png"
                class="interpolation-image wide-figure"
                alt="Overview of the Masked IRL pipeline.">
           <div class="figure-caption">
@@ -734,12 +738,12 @@ Natural language can more directly specify what the robot should focus on, and, 
 <section class="section" id="BibTeX">
   <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{hwang2026maskedirl,
-  title   = {Masked IRL: LLM-Guided Reward Disambiguation from Demonstrations and Language},
-  author  = {Hwang, Minyoung and Forsey-Smerek, Alexandra and Dennler, Nathaniel and Bobu, Andreea},
-  journal = {{IEEE} International Conference on Robotics and Automation, {ICRA}},
-  year    = {2026},
-}</code></pre>
+    <pre><code>@inproceedings{lee2026flex,
+    title     = {Flexible Language-Guided Representation Editing for Adaptive Robot Behavior},
+    author    = {Lee, Audrey and Dennler, Nathaniel and Sucholutsky, Ilia and Bobu, Andreea},
+    booktitle = {Conference on Robot Learning (CoRL)},
+    year      = {2026},
+    }</code></pre>
   </div>
 </section>
 
